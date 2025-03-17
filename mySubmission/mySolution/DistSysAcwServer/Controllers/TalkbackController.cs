@@ -1,38 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
 using DistSysAcwServer.Middleware;
 using DistSysAcwServer.Shared;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DistSysAcwServer.Controllers
 {
-    [Route("api/[controller]/[action]")]
-    [ApiController]
     public class TalkbackController : BaseController
     {
+
+
+        /// <summary>
+        /// Constructs a TalkBack controller, taking the UserContext through dependency injection
+        /// </summary>
+        /// <param name="context">DbContext set as a service in Startup.cs and dependency injected</param>
         public TalkbackController(Models.UserContext dbcontext, SharedError error) : base(dbcontext, error) { }
 
-        // Task 1: Hello endpoint
-        [HttpGet]
+
+        #region TASK1
+        //    TODO: add api/talkback/hello response
+        [HttpGet("api/talkback/hello")]
         public IActionResult Hello()
         {
-            return Ok("Hello, world!");
+            return Ok("Hello World");
         }
+        #endregion
 
-        // Task 1: Sort endpoint
-        [HttpGet]
-        public IActionResult Sort([FromQuery] int[] numbers)
+        #region TASK1
+        //    TODO:
+        //       add a parameter to get integers from the URI query
+        //       sort the integers into ascending order
+        //       send the integers back as the api/talkback/sort response
+        //       conform to the error handling requirements in the spec
+
+        [HttpGet("api/talkback/sort")]
+        public IActionResult Sort([FromQuery] List<string> integers)
         {
-            if (numbers == null || numbers.Length == 0)
+            if (integers == null || integers.Count == 0)
             {
-                Error.StatusCode = 400;
-                Error.Message = "Bad Request: No numbers provided.";
-                return BadRequest(Error.Message);
+                return Ok(new List<int>());
             }
 
-            var sortedNumbers = numbers.OrderBy(n => n).ToArray();
-            return Ok(sortedNumbers);
+            List<int> sortedIntegers = new List<int>();
+            foreach (var str in integers)
+            {
+                if (!int.TryParse(str, out int num))
+                {
+                    return BadRequest("Invalid input: all values must be integers.");
+                }
+                sortedIntegers.Add(num);
+            }
+
+            sortedIntegers.Sort();
+            return Ok(sortedIntegers);
         }
+        #endregion
     }
 }

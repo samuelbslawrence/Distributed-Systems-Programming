@@ -4,65 +4,59 @@ using System.Security.Claims;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using DistSysAcwServer.Middleware;
 using DistSysAcwServer.Models;
 using DistSysAcwServer.Shared;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.Identity.Client;
+
 
 namespace DistSysAcwServer.Auth
 {
-    public class CustomAuthenticationHandlerMiddleware : AuthenticationHandler<AuthenticationSchemeOptions>
+    /// <summary>
+    /// Authenticates clients by API Key
+    /// </summary>
+    public class CustomAuthenticationHandlerMiddleware
+        : AuthenticationHandler<AuthenticationSchemeOptions>, IAuthenticationHandler
     {
-        private readonly UserContext _dbContext;
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly SharedError _error;
+        private Models.UserContext DbContext { get; set; }
+        private IHttpContextAccessor HttpContextAccessor { get; set; }
+        private SharedError Error { get; set; }
 
         public CustomAuthenticationHandlerMiddleware(
             IOptionsMonitor<AuthenticationSchemeOptions> options,
             ILoggerFactory logger,
             UrlEncoder encoder,
-            UserContext dbContext,
+            Models.UserContext dbContext,
             IHttpContextAccessor httpContextAccessor,
             SharedError error)
             : base(options, logger, encoder)
         {
-            _dbContext = dbContext;
-            _httpContextAccessor = httpContextAccessor;
-            _error = error;
+            DbContext = dbContext;
+            HttpContextAccessor = httpContextAccessor;
+            Error = error;
         }
 
-        protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
+        /// <summary>
+        /// Authenticates the client by API Key
+        /// </summary>
+        protected override Task<AuthenticateResult> HandleAuthenticateAsync()
         {
-            if (!_httpContextAccessor.HttpContext.Request.Headers.TryGetValue("ApiKey", out var apiKey))
-            {
-                return AuthenticateResult.Fail("Missing API Key");
-            }
+            #region Task5
+            // TODO:  Find if a header ‘ApiKey’ exists, and if it does, check the database to determine if the given API Key is valid
+            //        Then create the correct Claims, add these to a ClaimsIdentity, create a ClaimsPrincipal from the identity 
+            //        Then use the Principal to generate a new AuthenticationTicket to return a Success AuthenticateResult
+            #endregion
 
-            var user = await _dbContext.Users.FindAsync(Guid.Parse(apiKey));
-            if (user == null)
-            {
-                return AuthenticateResult.Fail("Invalid API Key");
-            }
-
-            var claims = new[]
-            {
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Name, user.Name)
-            };
-
-            var identity = new ClaimsIdentity(claims, Scheme.Name);
-            var principal = new ClaimsPrincipal(identity);
-            var ticket = new AuthenticationTicket(principal, Scheme.Name);
-
-            return AuthenticateResult.Success(ticket);
+            return Task.FromResult(AuthenticateResult.Fail(new AuthenticationFailureException("HandleAuthenticateAsync is not yet fully implemented"))); // Placeholder
         }
 
         protected override Task HandleChallengeAsync(AuthenticationProperties properties)
         {
-            _error.StatusCode = StatusCodes.Status401Unauthorized;
-            _error.Message = "Unauthorized: API Key is required";
+            Error.StatusCode = StatusCodes.Status501NotImplemented;
+            Error.Message = "Task 5 incomplete";
             return Task.CompletedTask;
         }
     }
