@@ -18,36 +18,36 @@ namespace DistSysAcwServer.Controllers
         public TalkbackController(Models.UserContext dbcontext, SharedError error) : base(dbcontext, error) { }
 
 
-        #region TASK1
-        //    TODO: add api/talkback/hello response
-        [HttpGet("api/talkback/hello")]
+        #region Task 1
+        // GET api/talkback/hello
+        [HttpGet]
         public IActionResult Hello()
         {
+            // New implementation: return a friendly greeting.
             return Ok("Hello World");
         }
-        #endregion
 
-        #region TASK1
-        //    TODO:
-        //       add a parameter to get integers from the URI query
-        //       sort the integers into ascending order
-        //       send the integers back as the api/talkback/sort response
-        //       conform to the error handling requirements in the spec
-
-        [HttpGet("api/talkback/sort")]
+        // GET api/talkback/sort?integers=5&integers=3&integers=9
+        [HttpGet]
         public IActionResult Sort([FromQuery] List<string> integers)
         {
+            // If no integers provided, return an empty list.
             if (integers == null || integers.Count == 0)
             {
                 return Ok(new List<int>());
             }
 
             List<int> sortedIntegers = new List<int>();
+
+            // Try parsing each query string value into an integer.
             foreach (var str in integers)
             {
                 if (!int.TryParse(str, out int num))
                 {
-                    return BadRequest("Invalid input: all values must be integers.");
+                    // Set error details as per the error handling requirements.
+                    Error.StatusCode = 400;
+                    Error.Message = "Invalid input: all values must be integers.";
+                    return BadRequest(Error.Message);
                 }
                 sortedIntegers.Add(num);
             }

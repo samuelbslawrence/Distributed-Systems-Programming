@@ -12,6 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<SharedError>();
 builder.Services.AddTransient<DistSysAcwServer.Pipeline.ErrorHandlingMiddleware>();
 
+builder.Services.AddScoped<DistSysAcwServer.Repositories.UserRepository>();
+
 builder.Services.AddControllers(options =>
 {
     options.AllowEmptyInputInBodyModelBinding = true;

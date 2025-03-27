@@ -31,16 +31,37 @@ namespace DistSysAcwServer.Auth
         /// </summary>
         /// <param name="context">Information used to decide on authorisation</param>
         /// <param name="requirement">Authorisation requirements</param>
+
+        #region Task 6
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, RolesAuthorizationRequirement requirement)
         {
-            // requirement.AllowedRoles contains the roles that are allowed to access the action
-            // context.User contains the user trying to access the action
-            // context.Succeed(requirement) is used to succeed the requirement
-            // context.Fail() is used to fail the requirement
+            // Fail if no user is authenticated
+            if (context.User == null || !context.User.Identity.IsAuthenticated)
+            {
+                context.Fail();
+                return Task.CompletedTask;
+            }
 
-            context.Fail();
+            // Check if the action requires Admin role
+            bool isAdminRequired = requirement.AllowedRoles.Contains("Admin");
 
+            // Get the user's current role
+            var userRole = context.User.FindFirst(ClaimTypes.Role)?.Value;
+
+            if (isAdminRequired && userRole != "Admin")
+            {
+                // Set error for Forbidden access
+                Error.StatusCode = StatusCodes.Status403Forbidden;
+                Error.Message = "Forbidden. Admin access only.";
+
+                context.Fail();
+                return Task.CompletedTask;
+            }
+
+            // If we reach here and the role matches, succeed the requirement
+            context.Succeed(requirement);
             return Task.CompletedTask;
         }
+        #endregion
     }
 }

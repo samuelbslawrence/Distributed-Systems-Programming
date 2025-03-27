@@ -11,7 +11,7 @@ namespace DistSysAcwServer.Models
     /// </summary>
     public class User
     {
-        #region Task2
+        #region Task 2
         // TODO: Create a User Class for use with Entity Framework
         // Note that you can use the [key] attribute to set your ApiKey Guid as the primary key 
         public User() { }
@@ -26,6 +26,4 @@ namespace DistSysAcwServer.Models
     #region Task13?
     // TODO: You may find it useful to add code here for Logging
     #endregion
-
-
 }
