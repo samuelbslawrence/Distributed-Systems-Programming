@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace DistSysAcwServer.Middleware
 {
+    #region Untouched Skeleton Solution
     public class ActionErrorHandlingFilter : IAlwaysRunResultFilter, IExceptionFilter
     {
         private SharedError Error { get; set; }
@@ -72,4 +73,5 @@ namespace DistSysAcwServer.Middleware
             context.HttpContext.Response.WriteAsync("An exception occurred in " + context.ActionDescriptor.DisplayName + ": (" + context.Exception.Message + ")");
         }
     }
+    #endregion
 }

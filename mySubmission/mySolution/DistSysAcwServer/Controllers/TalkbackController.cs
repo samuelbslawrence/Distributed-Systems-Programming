@@ -9,14 +9,11 @@ namespace DistSysAcwServer.Controllers
 {
     public class TalkbackController : BaseController
     {
-
-
         /// <summary>
         /// Constructs a TalkBack controller, taking the UserContext through dependency injection
         /// </summary>
         /// <param name="context">DbContext set as a service in Startup.cs and dependency injected</param>
         public TalkbackController(Models.UserContext dbcontext, SharedError error) : base(dbcontext, error) { }
-
 
         #region Task 1
         // GET api/talkback/hello

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace DistSysAcwServer.Repositories
 {
-    #region Task 3
     public class UserRepository
     {
         private readonly UserContext _context;
@@ -16,11 +15,9 @@ namespace DistSysAcwServer.Repositories
             _context = context;
         }
 
-        /// <summary>
-        /// Create a new user with a generated ApiKey
-        /// </summary>
-        /// <param name="userName">Username for the new user</param>
-        /// <returns>The newly created User object</returns>
+        #region Task 3
+        // Re-written for task 13
+        // Creates a new user with a generated ApiKey
         public async Task<User> CreateUserAsync(string userName)
         {
             // Generate a new unique ApiKey
@@ -41,42 +38,25 @@ namespace DistSysAcwServer.Repositories
             return newUser;
         }
 
-        /// <summary>
-        /// Check if a user with the given ApiKey exists
-        /// </summary>
-        /// <param name="apiKey">ApiKey to check</param>
-        /// <returns>True if user exists, False otherwise</returns>
+        // Checks if a user with the given ApiKey exists
         public async Task<bool> UserExistsAsync(string apiKey)
         {
             return await _context.Users.AnyAsync(u => u.ApiKey == apiKey);
         }
 
-        /// <summary>
-        /// Check if a user with the given ApiKey and Username exists
-        /// </summary>
-        /// <param name="apiKey">ApiKey to check</param>
-        /// <param name="userName">Username to check</param>
-        /// <returns>True if user exists, False otherwise</returns>
+        // Checks if a user with the given ApiKey and Username exists
         public async Task<bool> UserExistsAsync(string apiKey, string userName)
         {
             return await _context.Users.AnyAsync(u => u.ApiKey == apiKey && u.UserName == userName);
         }
 
-        /// <summary>
-        /// Get a user by their ApiKey
-        /// </summary>
-        /// <param name="apiKey">ApiKey of the user</param>
-        /// <returns>User object if found, null otherwise</returns>
+        // Retrieves a user by their ApiKey
         public async Task<User?> GetUserByApiKeyAsync(string apiKey)
         {
             return await _context.Users.FirstOrDefaultAsync(u => u.ApiKey == apiKey);
         }
 
-        /// <summary>
-        /// Delete a user by their ApiKey
-        /// </summary>
-        /// <param name="apiKey">ApiKey of the user to delete</param>
-        /// <returns>True if user was deleted, False if user not found</returns>
+        // Deletes a user by their ApiKey
         public async Task<bool> DeleteUserAsync(string apiKey)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.ApiKey == apiKey);
@@ -89,25 +69,18 @@ namespace DistSysAcwServer.Repositories
             return true;
         }
 
-        /// <summary>
-        /// Update a user's role
-        /// Uses optimistic concurrency to handle simultaneous updates
-        /// </summary>
-        /// <param name="apiKey">ApiKey of the user</param>
-        /// <param name="newRole">New role to assign</param>
-        /// <returns>True if update successful, False if user not found</returns>
+        // Updates a user's role using optimistic concurrency
         public async Task<bool> UpdateUserRoleAsync(string apiKey, string newRole)
         {
             try
             {
-                // Use Update method to handle potential concurrent modifications
-                var user = await _context.Users
+                var affectedRows = await _context.Users
                     .Where(u => u.ApiKey == apiKey)
                     .ExecuteUpdateAsync(s => s
                         .SetProperty(u => u.Role, newRole)
                     );
 
-                return user > 0;
+                return affectedRows > 0;
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -115,6 +88,46 @@ namespace DistSysAcwServer.Repositories
                 return false;
             }
         }
+        #endregion
+
+        #region Task 13
+        // Adds a log entry for the user identified by the given API key
+        public async Task AddLogAsync(string apiKey, string logMessage)
+        {
+            // Include logs to ensure we have access to the collection
+            var user = await _context.Users.Include(u => u.Logs).FirstOrDefaultAsync(u => u.ApiKey == apiKey);
+            if (user != null)
+            {
+                // Add a new log entry with the message and current DateTime
+                user.Logs.Add(new Log(logMessage));
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        // Deletes a user and archives their logs before deletion
+        public async Task<bool> DeleteUserWithLoggingAsync(string apiKey)
+        {
+            // Include logs in the query
+            var user = await _context.Users.Include(u => u.Logs).FirstOrDefaultAsync(u => u.ApiKey == apiKey);
+
+            if (user == null)
+                return false;
+
+            // Archive the user's logs so they remain after deletion
+            if (user.Logs != null && user.Logs.Any())
+            {
+                foreach (var log in user.Logs)
+                {
+                    var archiveLog = new LogArchive(log.LogString, user.ApiKey);
+                    _context.LogArchives.Add(archiveLog);
+                }
+            }
+
+            // Remove the user from the database
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        #endregion
     }
-    #endregion
 }

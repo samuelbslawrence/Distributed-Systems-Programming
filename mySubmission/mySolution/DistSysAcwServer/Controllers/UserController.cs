@@ -4,6 +4,8 @@ using DistSysAcwServer.Repositories;
 using DistSysAcwServer.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace DistSysAcwServer.Controllers
 {
@@ -77,90 +79,95 @@ namespace DistSysAcwServer.Controllers
             // Return API Key
             return Ok(newUser.ApiKey);
         }
+        #endregion
 
-    #endregion
-
-    #region Task 7
-    [HttpDelete("api/user/removeuser")]
-    public async Task<IActionResult> RemoveUser([FromQuery] string username)
-    {
-        // Check if the ApiKey header exists
-        if (!Request.Headers.TryGetValue("ApiKey", out var apiKeyValues))
-        {
-            return Ok(false);
-        }
-        string apiKey = apiKeyValues.First();
-
-        // Get the user by ApiKey using the repository
-        var user = await _userRepository.GetUserByApiKeyAsync(apiKey);
-        if (user == null)
-        {
-            return Ok(false);
-        }
-
-        // Check if the provided username matches the user's username (case-insensitive)
-        if (!string.Equals(user.UserName, username, StringComparison.OrdinalIgnoreCase))
-        {
-            return Ok(false);
-        }
-
-        // Attempt to delete the user
-        bool deleted = await _userRepository.DeleteUserAsync(apiKey);
-        return Ok(deleted);
-    }
-    #endregion
-
-    #region Task 8
-    public class ChangeRoleRequest
-    {
-        public string Username { get; set; }
-        public string Role { get; set; }
-    }
-
-    [HttpPost("api/user/changerole")]
-    public async Task<IActionResult> ChangeRole([FromBody] ChangeRoleRequest request)
-    {
-        try
+        #region Task 7 & 13
+        [HttpDelete("api/user/removeuser")]
+        public async Task<IActionResult> RemoveUser([FromQuery] string username)
         {
             // Check if the ApiKey header exists
             if (!Request.Headers.TryGetValue("ApiKey", out var apiKeyValues))
             {
-                return BadRequest("NOT DONE: An error occured");
+                return Ok(false);
             }
             string apiKey = apiKeyValues.First();
 
-            // Get the user by ApiKey using the repository and verify admin privileges
-            var adminUser = await _userRepository.GetUserByApiKeyAsync(apiKey);
-            if (adminUser == null || !string.Equals(adminUser.Role, "Admin", StringComparison.OrdinalIgnoreCase))
+            // Task 13: Log the request for RemoveUser endpoint
+            await _userRepository.AddLogAsync(apiKey, "User requested /api/user/removeuser");
+
+            // Get the user by ApiKey using the repository
+            var user = await _userRepository.GetUserByApiKeyAsync(apiKey);
+            if (user == null)
+            {
+                return Ok(false);
+            }
+
+            // Check if the provided username matches the user's username (case-insensitive)
+            if (!string.Equals(user.UserName, username, System.StringComparison.OrdinalIgnoreCase))
+            {
+                return Ok(false);
+            }
+
+            // Attempt to delete the user
+            bool deleted = await _userRepository.DeleteUserAsync(apiKey);
+            return Ok(deleted);
+        }
+        #endregion
+
+        #region Task 8 & 13
+        public class ChangeRoleRequest
+        {
+            public string Username { get; set; }
+            public string Role { get; set; }
+        }
+
+        [HttpPost("api/user/changerole")]
+        public async Task<IActionResult> ChangeRole([FromBody] ChangeRoleRequest request)
+        {
+            try
+            {
+                // Check if the ApiKey header exists
+                if (!Request.Headers.TryGetValue("ApiKey", out var apiKeyValues))
+                {
+                    return BadRequest("NOT DONE: An error occured");
+                }
+                string apiKey = apiKeyValues.First();
+
+                // Task 13: Log the request for ChangeRole endpoint
+                await _userRepository.AddLogAsync(apiKey, "User requested /api/user/changerole");
+
+                // Get the user by ApiKey using the repository and verify admin privileges
+                var adminUser = await _userRepository.GetUserByApiKeyAsync(apiKey);
+                if (adminUser == null || !string.Equals(adminUser.Role, "Admin", System.StringComparison.OrdinalIgnoreCase))
+                {
+                    return BadRequest("NOT DONE: An error occured");
+                }
+
+                // Validate the role provided in the request. Only allow "User" or "Admin"
+                if (!string.Equals(request.Role, "User", System.StringComparison.OrdinalIgnoreCase) &&
+                    !string.Equals(request.Role, "Admin", System.StringComparison.OrdinalIgnoreCase))
+                {
+                    return BadRequest("NOT DONE: Role does not exist");
+                }
+
+                // Check if the username exists in the database
+                var targetUser = await DbContext.Users.FirstOrDefaultAsync(u => u.UserName == request.Username);
+                if (targetUser == null)
+                {
+                    return BadRequest("NOT DONE: Username does not exist");
+                }
+
+                // Update the user's role
+                targetUser.Role = request.Role;
+                await DbContext.SaveChangesAsync();
+
+                return Ok("DONE");
+            }
+            catch (System.Exception)
             {
                 return BadRequest("NOT DONE: An error occured");
             }
-
-            // Validate the role provided in the request. Only allow "User" or "Admin"
-            if (!string.Equals(request.Role, "User", StringComparison.OrdinalIgnoreCase) &&
-                !string.Equals(request.Role, "Admin", StringComparison.OrdinalIgnoreCase))
-            {
-                return BadRequest("NOT DONE: Role does not exist");
-            }
-
-            // Check if the username exists in the database
-            var targetUser = await DbContext.Users.FirstOrDefaultAsync(u => u.UserName == request.Username);
-            if (targetUser == null)
-            {
-                return BadRequest("NOT DONE: Username does not exist");
-            }
-
-            // Update the user's role
-            targetUser.Role = request.Role;
-            await DbContext.SaveChangesAsync();
-
-            return Ok("DONE");
         }
-        catch (Exception)
-        {
-            return BadRequest("NOT DONE: An error occured");
-        }
-        }
-    #endregion
+        #endregion
     }
 }

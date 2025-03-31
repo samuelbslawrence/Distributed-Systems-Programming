@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DistSysAcwServer.Controllers
 {
+    #region Untouched Skeleton Solution
     [Route("api/[Controller]/[Action]")]
     [ApiController]
     public abstract class BaseController : ControllerBase
@@ -31,4 +32,5 @@ namespace DistSysAcwServer.Controllers
             Error = error;
         }
     }
+    #endregion
 }

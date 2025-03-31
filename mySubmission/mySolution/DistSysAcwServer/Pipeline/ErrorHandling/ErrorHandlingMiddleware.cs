@@ -8,6 +8,7 @@ using DistSysAcwServer.Shared;
 
 namespace DistSysAcwServer.Pipeline
 {
+    #region Untouched Skeleton Solution
     public class ErrorHandlingMiddleware : IMiddleware
     {
         private SharedError Error { get; set; }
@@ -33,4 +34,5 @@ namespace DistSysAcwServer.Pipeline
             }
         }
     }
+    #endregion
 }

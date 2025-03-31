@@ -21,9 +21,11 @@ namespace DistSysAcwServer.Models
         public string UserName { get; set; }
         public string Role { get; set; }
         #endregion
-    }
 
-    #region Task13?
-    // TODO: You may find it useful to add code here for Logging
-    #endregion
+        #region Task 13
+        // TODO: You may find it useful to add code here for Logging
+        // Navigation property for the user's logs
+        public virtual ICollection<Log> Logs { get; set; } = new List<Log>();
+        #endregion
+    }
 }
