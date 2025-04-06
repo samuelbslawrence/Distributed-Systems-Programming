@@ -4006,32 +4006,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\samue\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/samuellawrence/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\DistSysAcwServer.csproj",
+      "projectUniqueName": "/Users/samuellawrence/Documents/Documents/GitHub/Distributed-Systems-Programming/mySubmission/mySolution/DistSysAcwServer/DistSysAcwServer.csproj",
       "projectName": "DistSysAcwServer",
-      "projectPath": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\DistSysAcwServer.csproj",
-      "packagesPath": "C:\\Users\\samue\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\obj\\",
+      "projectPath": "/Users/samuellawrence/Documents/Documents/GitHub/Distributed-Systems-Programming/mySubmission/mySolution/DistSysAcwServer/DistSysAcwServer.csproj",
+      "packagesPath": "/Users/samuellawrence/.nuget/packages/",
+      "outputPath": "/Users/samuellawrence/Documents/Documents/GitHub/Distributed-Systems-Programming/mySubmission/mySolution/DistSysAcwServer/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\samue\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/samuellawrence/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4049,8 +4041,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -4090,7 +4081,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

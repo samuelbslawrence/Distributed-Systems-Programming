@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "HxijzL7/QoIhxb0GD++XIy+gv6LZHYphvPHJtB3Gwm4=",
+  "Hash": "PH6ioAKGHN6TCiYo0QPOZgOgRmJkh1PwIlDukXV9Lco=",
   "Source": "DistSysAcwServer",
   "BasePath": "_content/DistSysAcwServer",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }
