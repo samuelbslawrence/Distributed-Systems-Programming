@@ -1,0 +1,324 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\controllers\\protectedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\controllers\\protectedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\controllers\\talkbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\controllers\\talkbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\logs\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\logs\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\logs\\logarchive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\logs\\logarchive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\pipeline\\auth\\customauthenticationhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\pipeline\\auth\\customauthenticationhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\pipeline\\auth\\customauthorizationhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\pipeline\\auth\\customauthorizationhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\pipeline\\errorhandling\\actionerrorhandlingfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\pipeline\\errorhandling\\actionerrorhandlingfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\pipeline\\errorhandling\\errorhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\pipeline\\errorhandling\\errorhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\models\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\models\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\shared\\sharederror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\shared\\sharederror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{276D5CFF-019E-4FE1-A6CE-BD6135C9259F}|DistSysAcwClient\\DistSysAcwClient.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{276D5CFF-019E-4FE1-A6CE-BD6135C9259F}|DistSysAcwClient\\DistSysAcwClient.csproj|solutionrelative:distsysacwclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\mysubmission\\mysolution\\distsysacwserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProtectedController.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Controllers\\ProtectedController.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Controllers\\ProtectedController.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Controllers\\ProtectedController.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Controllers\\ProtectedController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAP8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T14:29:37.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Log.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Logs\\Log.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Logs\\Log.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Logs\\Log.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Logs\\Log.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T12:02:55.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LogArchive.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Logs\\LogArchive.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Logs\\LogArchive.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Logs\\LogArchive.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Logs\\LogArchive.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T12:03:11.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Controllers\\UserController.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T12:55:30.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TalkbackController.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Controllers\\TalkbackController.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Controllers\\TalkbackController.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Controllers\\TalkbackController.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Controllers\\TalkbackController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T22:17:35.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CustomAuthenticationHandlerMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Pipeline\\Auth\\CustomAuthenticationHandlerMiddleware.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Pipeline\\Auth\\CustomAuthenticationHandlerMiddleware.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Pipeline\\Auth\\CustomAuthenticationHandlerMiddleware.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Pipeline\\Auth\\CustomAuthenticationHandlerMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T22:21:30.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CustomAuthorizationHandlerMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Pipeline\\Auth\\CustomAuthorizationHandlerMiddleware.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Pipeline\\Auth\\CustomAuthorizationHandlerMiddleware.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Pipeline\\Auth\\CustomAuthorizationHandlerMiddleware.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Pipeline\\Auth\\CustomAuthorizationHandlerMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T22:22:07.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ActionErrorHandlingFilter.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Pipeline\\ErrorHandling\\ActionErrorHandlingFilter.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Pipeline\\ErrorHandling\\ActionErrorHandlingFilter.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Pipeline\\ErrorHandling\\ActionErrorHandlingFilter.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Pipeline\\ErrorHandling\\ActionErrorHandlingFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T22:22:45.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ErrorHandlingMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Pipeline\\ErrorHandling\\ErrorHandlingMiddleware.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Pipeline\\ErrorHandling\\ErrorHandlingMiddleware.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Pipeline\\ErrorHandling\\ErrorHandlingMiddleware.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Pipeline\\ErrorHandling\\ErrorHandlingMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T22:23:12.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T12:43:12.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Models\\User.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Models\\User.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T22:20:30.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserContext.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Models\\UserContext.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Models\\UserContext.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Models\\UserContext.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Models\\UserContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T22:19:57.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Controllers\\BaseController.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Controllers\\BaseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T22:17:06.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Program.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Program.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Program.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T23:08:58.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SharedError.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Shared\\SharedError.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Shared\\SharedError.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Shared\\SharedError.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Shared\\SharedError.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T13:08:07.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwClient\\Program.cs",
+              "RelativeDocumentMoniker": "DistSysAcwClient\\Program.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwClient\\Program.cs",
+              "RelativeToolTip": "DistSysAcwClient\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPQBAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T22:24:54.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\Properties\\launchSettings.json",
+              "RelativeToolTip": "DistSysAcwServer\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-13T13:35:31.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\appsettings.json",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\appsettings.json",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\mySubmission\\mySolution\\DistSysAcwServer\\appsettings.json",
+              "RelativeToolTip": "DistSysAcwServer\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-10T22:26:45.744Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

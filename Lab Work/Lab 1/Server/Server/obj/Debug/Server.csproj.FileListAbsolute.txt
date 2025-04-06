@@ -1,0 +1,7 @@
+C:\Users\samue\OneDrive\Documents\Github\GitHub\Distributed-Systems-Programming\Lab Work\Lab 1\Server\Server\bin\Debug\Server.exe.config
+C:\Users\samue\OneDrive\Documents\Github\GitHub\Distributed-Systems-Programming\Lab Work\Lab 1\Server\Server\bin\Debug\Server.exe
+C:\Users\samue\OneDrive\Documents\Github\GitHub\Distributed-Systems-Programming\Lab Work\Lab 1\Server\Server\bin\Debug\Server.pdb
+C:\Users\samue\OneDrive\Documents\Github\GitHub\Distributed-Systems-Programming\Lab Work\Lab 1\Server\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\samue\OneDrive\Documents\Github\GitHub\Distributed-Systems-Programming\Lab Work\Lab 1\Server\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\samue\OneDrive\Documents\Github\GitHub\Distributed-Systems-Programming\Lab Work\Lab 1\Server\Server\obj\Debug\Server.exe
+C:\Users\samue\OneDrive\Documents\Github\GitHub\Distributed-Systems-Programming\Lab Work\Lab 1\Server\Server\obj\Debug\Server.pdb

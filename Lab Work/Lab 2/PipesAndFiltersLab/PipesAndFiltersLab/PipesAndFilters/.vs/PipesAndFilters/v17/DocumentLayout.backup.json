@@ -1,0 +1,241 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\lab work\\lab 2\\pipesandfilterslab\\pipesandfilterslab\\pipesandfilters\\pipesandfilters\\entrypoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|solutionrelative:pipesandfilters\\entrypoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\lab work\\lab 2\\pipesandfilterslab\\pipesandfilterslab\\pipesandfilters\\pipesandfilters\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|solutionrelative:pipesandfilters\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\lab work\\lab 2\\pipesandfilterslab\\pipesandfilterslab\\pipesandfilters\\pipesandfilters\\serverenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|solutionrelative:pipesandfilters\\serverenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\lab work\\lab 2\\pipesandfilterslab\\pipesandfilterslab\\pipesandfilters\\pipesandfilters\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|solutionrelative:pipesandfilters\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\lab work\\lab 2\\pipesandfilterslab\\pipesandfilterslab\\pipesandfilters\\pipesandfilters\\endpoints\\helloworldendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|solutionrelative:pipesandfilters\\endpoints\\helloworldendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\lab work\\lab 2\\pipesandfilterslab\\pipesandfilterslab\\pipesandfilters\\pipesandfilters\\pipes\\pipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|solutionrelative:pipesandfilters\\pipes\\pipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\lab work\\lab 2\\pipesandfilterslab\\pipesandfilterslab\\pipesandfilters\\pipesandfilters\\pipes\\ipipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|solutionrelative:pipesandfilters\\pipes\\ipipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\lab work\\lab 2\\pipesandfilterslab\\pipesandfilterslab\\pipesandfilters\\pipesandfilters\\filters\\translatefilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|solutionrelative:pipesandfilters\\filters\\translatefilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\lab work\\lab 2\\pipesandfilterslab\\pipesandfilterslab\\pipesandfilters\\pipesandfilters\\filters\\timestampfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|solutionrelative:pipesandfilters\\filters\\timestampfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\lab work\\lab 2\\pipesandfilterslab\\pipesandfilterslab\\pipesandfilters\\pipesandfilters\\filters\\authenticatefilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|solutionrelative:pipesandfilters\\filters\\authenticatefilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\lab work\\lab 2\\pipesandfilterslab\\pipesandfilterslab\\pipesandfilters\\pipesandfilters\\filters\\ifilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|solutionrelative:pipesandfilters\\filters\\ifilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\lab work\\lab 2\\pipesandfilterslab\\pipesandfilterslab\\pipesandfilters\\pipesandfilters\\messages\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|solutionrelative:pipesandfilters\\messages\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|c:\\users\\samue\\onedrive\\documents\\github\\github\\distributed-systems-programming\\lab work\\lab 2\\pipesandfilterslab\\pipesandfilterslab\\pipesandfilters\\pipesandfilters\\messages\\imessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D44C1B3F-A4C4-4B60-82DE-077D337B724C}|PipesAndFilters\\PipesAndFilters.csproj|solutionrelative:pipesandfilters\\messages\\imessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EntryPoint.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\EntryPoint.cs",
+              "RelativeDocumentMoniker": "PipesAndFilters\\EntryPoint.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\EntryPoint.cs",
+              "RelativeToolTip": "PipesAndFilters\\EntryPoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T14:03:49.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Client.cs",
+              "RelativeDocumentMoniker": "PipesAndFilters\\Client.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Client.cs",
+              "RelativeToolTip": "PipesAndFilters\\Client.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T14:03:41.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\User.cs",
+              "RelativeDocumentMoniker": "PipesAndFilters\\User.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\User.cs",
+              "RelativeToolTip": "PipesAndFilters\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T14:03:21.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HelloWorldEndpoint.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Endpoints\\HelloWorldEndpoint.cs",
+              "RelativeDocumentMoniker": "PipesAndFilters\\Endpoints\\HelloWorldEndpoint.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Endpoints\\HelloWorldEndpoint.cs",
+              "RelativeToolTip": "PipesAndFilters\\Endpoints\\HelloWorldEndpoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T14:03:13.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TimestampFilter.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Filters\\TimestampFilter.cs",
+              "RelativeDocumentMoniker": "PipesAndFilters\\Filters\\TimestampFilter.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Filters\\TimestampFilter.cs",
+              "RelativeToolTip": "PipesAndFilters\\Filters\\TimestampFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T13:35:41.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TranslateFilter.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Filters\\TranslateFilter.cs",
+              "RelativeDocumentMoniker": "PipesAndFilters\\Filters\\TranslateFilter.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Filters\\TranslateFilter.cs",
+              "RelativeToolTip": "PipesAndFilters\\Filters\\TranslateFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T13:35:24.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServerEnvironment.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\ServerEnvironment.cs",
+              "RelativeDocumentMoniker": "PipesAndFilters\\ServerEnvironment.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\ServerEnvironment.cs",
+              "RelativeToolTip": "PipesAndFilters\\ServerEnvironment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T13:42:25.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AuthenticateFilter.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Filters\\AuthenticateFilter.cs",
+              "RelativeDocumentMoniker": "PipesAndFilters\\Filters\\AuthenticateFilter.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Filters\\AuthenticateFilter.cs",
+              "RelativeToolTip": "PipesAndFilters\\Filters\\AuthenticateFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T13:35:08.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IPipe.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Pipes\\IPipe.cs",
+              "RelativeDocumentMoniker": "PipesAndFilters\\Pipes\\IPipe.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Pipes\\IPipe.cs",
+              "RelativeToolTip": "PipesAndFilters\\Pipes\\IPipe.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T13:34:15.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Pipe.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Pipes\\Pipe.cs",
+              "RelativeDocumentMoniker": "PipesAndFilters\\Pipes\\Pipe.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Pipes\\Pipe.cs",
+              "RelativeToolTip": "PipesAndFilters\\Pipes\\Pipe.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T13:33:41.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IFilter.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Filters\\IFilter.cs",
+              "RelativeDocumentMoniker": "PipesAndFilters\\Filters\\IFilter.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Filters\\IFilter.cs",
+              "RelativeToolTip": "PipesAndFilters\\Filters\\IFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T13:18:27.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Message.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Messages\\Message.cs",
+              "RelativeDocumentMoniker": "PipesAndFilters\\Messages\\Message.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Messages\\Message.cs",
+              "RelativeToolTip": "PipesAndFilters\\Messages\\Message.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T13:34:43.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IMessage.cs",
+              "DocumentMoniker": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Messages\\IMessage.cs",
+              "RelativeDocumentMoniker": "PipesAndFilters\\Messages\\IMessage.cs",
+              "ToolTip": "C:\\Users\\samue\\OneDrive\\Documents\\Github\\GitHub\\Distributed-Systems-Programming\\Lab Work\\Lab 2\\PipesAndFiltersLab\\PipesAndFiltersLab\\PipesAndFilters\\PipesAndFilters\\Messages\\IMessage.cs",
+              "RelativeToolTip": "PipesAndFilters\\Messages\\IMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T13:17:34.156Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
