@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "73O/R48ORw4=",
+  "dgSpecHash": "hxWzgy2GQN8=",
   "success": true,
   "projectFilePath": "/Users/samuellawrence/Documents/Documents/GitHub/Distributed-Systems-Programming/mySubmission/mySolution/DistSysAcwClient/DistSysAcwClient.csproj",
-  "expectedPackageFiles": [
-    "/Users/samuellawrence/.nuget/packages/microsoft.netcore.app.ref/8.0.11/microsoft.netcore.app.ref.8.0.11.nupkg.sha512",
-    "/Users/samuellawrence/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.11/microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512",
-    "/Users/samuellawrence/.nuget/packages/microsoft.netcore.app.host.osx-arm64/8.0.11/microsoft.netcore.app.host.osx-arm64.8.0.11.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
