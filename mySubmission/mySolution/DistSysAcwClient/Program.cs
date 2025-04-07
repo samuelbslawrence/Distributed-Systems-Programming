@@ -9,8 +9,13 @@ using System.Security.Cryptography;
 class Program
 {
     #region Task 10
-    // Change to switch between the test server and local server
-    private const string BaseUrl = "http://localhost:44394";
+    // Test Server
+    //private const string BaseUrl = "http://150.237.94.9/5488600/";
+    // IIS
+    private const string BaseUrl = "https://localhost:44394/";
+    // Kestrel
+    //private const string BaseUrl = "https://localhost:5001/";
+
     private static readonly HttpClient client = new HttpClient();
 
     private static string storedUserName = "";
@@ -196,7 +201,8 @@ class Program
         Console.WriteLine("...please wait...");
         try
         {
-            HttpResponseMessage response = await client.GetAsync($"{BaseUrl}talkback/hello");
+            HttpResponseMessage response = await client.GetAsync($"{BaseUrl}api/talkback/hello");
+
             await PrintResponse(response);
         }
         catch (HttpRequestException ex)
@@ -211,7 +217,7 @@ class Program
         try
         {
             string query = string.Join("&", numbers.Select(n => $"integers={n}"));
-            HttpResponseMessage response = await client.GetAsync($"{BaseUrl}talkback/sort?{query}");
+            HttpResponseMessage response = await client.GetAsync($"{BaseUrl}api/talkback/sort?{query}");
             await PrintResponse(response);
         }
         catch (HttpRequestException ex)
@@ -225,7 +231,7 @@ class Program
         Console.WriteLine("...please wait...");
         try
         {
-            HttpResponseMessage response = await client.GetAsync($"{BaseUrl}user/new?username={username}");
+            HttpResponseMessage response = await client.GetAsync($"{BaseUrl}api/user/new?username={username}");
             await PrintResponse(response);
         }
         catch (HttpRequestException ex)
@@ -241,7 +247,7 @@ class Program
         {
             // Send username as JSON in the request body
             var content = new StringContent(JsonSerializer.Serialize(username), Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.PostAsync($"{BaseUrl}user/new", content);
+            HttpResponseMessage response = await client.PostAsync($"{BaseUrl}api/user/new", content);
             if (response.IsSuccessStatusCode)
             {
                 storedUserName = username;
@@ -277,7 +283,7 @@ class Program
         Console.WriteLine("...please wait...");
         try
         {
-            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Delete, $"{BaseUrl}user/removeuser?username={storedUserName}");
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Delete, $"{BaseUrl}api/user/removeuser?username={storedUserName}");
             request.Headers.Add("ApiKey", storedApiKey);
             HttpResponseMessage response = await client.SendAsync(request);
             // Output exactly "True" if deletion succeeded, otherwise "False"
@@ -310,7 +316,7 @@ class Program
             var json = JsonSerializer.Serialize(jsonObj);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, $"{BaseUrl}user/changerole");
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, $"{BaseUrl}api/user/changerole");
             request.Headers.Add("ApiKey", storedApiKey);
             request.Content = content;
 
@@ -333,7 +339,7 @@ class Program
         Console.WriteLine("...please wait...");
         try
         {
-            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"{BaseUrl}protected/hello");
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"{BaseUrl}api/protected/hello");
             request.Headers.Add("ApiKey", storedApiKey);
             HttpResponseMessage response = await client.SendAsync(request);
             await PrintResponse(response);
@@ -355,7 +361,7 @@ class Program
         try
         {
             string encodedMessage = Uri.EscapeDataString(message);
-            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"{BaseUrl}protected/sha1?message={encodedMessage}");
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"{BaseUrl}api/protected/sha1?message={encodedMessage}");
             request.Headers.Add("ApiKey", storedApiKey);
             HttpResponseMessage response = await client.SendAsync(request);
             await PrintResponse(response);
@@ -377,7 +383,7 @@ class Program
         try
         {
             string encodedMessage = Uri.EscapeDataString(message);
-            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"{BaseUrl}protected/sha256?message={encodedMessage}");
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"{BaseUrl}api/protected/sha256?message={encodedMessage}");
             request.Headers.Add("ApiKey", storedApiKey);
             HttpResponseMessage response = await client.SendAsync(request);
             await PrintResponse(response);
@@ -401,7 +407,7 @@ class Program
         Console.WriteLine("...please wait...");
         try
         {
-            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"{BaseUrl}protected/getpublickey");
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"{BaseUrl}api/protected/getpublickey");
             request.Headers.Add("ApiKey", storedApiKey);
             HttpResponseMessage response = await client.SendAsync(request);
             string responseText = await response.Content.ReadAsStringAsync();
@@ -440,7 +446,7 @@ class Program
         try
         {
             string encodedMessage = Uri.EscapeDataString(message);
-            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"{BaseUrl}protected/sign?message={encodedMessage}");
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, $"{BaseUrl}api/protected/sign?message={encodedMessage}");
             request.Headers.Add("ApiKey", storedApiKey);
             HttpResponseMessage response = await client.SendAsync(request);
             string signatureHex = await response.Content.ReadAsStringAsync();
