@@ -10,7 +10,7 @@ class Program
 {
     #region Task 10
     // Change to switch between the test server and local server
-    private const string BaseUrl = "https://localhost:5001";
+    private const string BaseUrl = "http://localhost:44394";
     private static readonly HttpClient client = new HttpClient();
 
     private static string storedUserName = "";
