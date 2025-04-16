@@ -3,6 +3,7 @@ using DistSysAcwServer.Pipeline;
 using DistSysAcwServer.Shared;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +20,8 @@ builder.Services.AddControllers(options =>
     options.AllowEmptyInputInBodyModelBinding = true;
     options.Filters.Add<ActionErrorHandlingFilter>();
 });
-builder.Services.AddDbContext<DistSysAcwServer.Models.UserContext>();
+builder.Services.AddDbContext<DistSysAcwServer.Models.UserContext>(options =>
+    options.UseSqlite("Data Source=DistSysAcw.db"));
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddAuthentication(options =>

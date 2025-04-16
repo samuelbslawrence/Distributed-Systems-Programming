@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 namespace DistSysAcwServer.Controllers
 {
     #region Task 4
+    [Route("api/[controller]")]
+    [ApiController]
     public class UserController : BaseController
     {
         private readonly UserRepository _userRepository;
@@ -22,16 +24,14 @@ namespace DistSysAcwServer.Controllers
             _userRepository = userRepository;
         }
 
-        [HttpGet("api/user/new")]
+        [HttpGet("new")]
         public async Task<IActionResult> CheckUserExists([FromQuery] string? username)
         {
-            // If no username is provided
             if (string.IsNullOrWhiteSpace(username))
             {
                 return Ok("False - User Does Not Exist! Did you mean to do a POST to create a new user?");
             }
 
-            // Check if user exists by username
             bool userExists = await DbContext.Users.AnyAsync(u => u.UserName == username);
 
             if (userExists)
@@ -44,27 +44,23 @@ namespace DistSysAcwServer.Controllers
             }
         }
 
-        [HttpPost("api/user/new")]
+        [HttpPost("new")]
         public async Task<IActionResult> CreateUser([FromBody] string? username)
         {
-            // Check if username is provided
             if (string.IsNullOrWhiteSpace(username))
             {
                 return BadRequest("Oops. Make sure your body contains a string with your username and your Content-Type is Content-Type:application/json");
             }
 
-            // Check if username is already taken
             bool userExists = await DbContext.Users.AnyAsync(u => u.UserName == username);
             if (userExists)
             {
                 return StatusCode(403, "Oops. This username is already in use. Please try again with a new username.");
             }
 
-            // Determine if this is the first user (should be admin)
             bool isFirstUser = !await DbContext.Users.AnyAsync();
             string role = isFirstUser ? "Admin" : "User";
 
-            // Create new user
             var newUser = new User
             {
                 ApiKey = Guid.NewGuid().ToString(),
@@ -72,17 +68,15 @@ namespace DistSysAcwServer.Controllers
                 Role = role
             };
 
-            // Add user to database
             DbContext.Users.Add(newUser);
             await DbContext.SaveChangesAsync();
 
-            // Return API Key
             return Ok(newUser.ApiKey);
         }
         #endregion
 
         #region Task 7 & 13
-        [HttpDelete("api/user/removeuser")]
+        [HttpDelete("removeuser")]
         public async Task<IActionResult> RemoveUser([FromQuery] string username)
         {
             // Check if the ApiKey header exists
@@ -121,7 +115,7 @@ namespace DistSysAcwServer.Controllers
             public string Role { get; set; }
         }
 
-        [HttpPost("api/user/changerole")]
+        [HttpPost("changerole")]
         public async Task<IActionResult> ChangeRole([FromBody] ChangeRoleRequest request)
         {
             try

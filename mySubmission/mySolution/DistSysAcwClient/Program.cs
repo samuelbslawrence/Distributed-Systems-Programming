@@ -5,14 +5,15 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.IO;
 
 class Program
 {
     #region Task 10
     // Test Server
-    //private const string BaseUrl = "http://150.237.94.9/5488600/";
+    private const string BaseUrl = "http://150.237.94.9/5488600/";
     // IIS
-    private const string BaseUrl = "https://localhost:44394/";
+    //private const string BaseUrl = "https://localhost:44394/";
     // Kestrel
     //private const string BaseUrl = "https://localhost:5001/";
 
@@ -139,6 +140,7 @@ class Program
                     if (args.Length > 1)
                     {
                         string subCommand = args[1].ToLower();
+
                         if (subCommand == "hello")
                         {
                             await ProtectedHello();
@@ -165,13 +167,24 @@ class Program
                         {
                             if (args.Length > 2)
                             {
-                                // Allow messages with spaces
                                 string message = string.Join(" ", args.Skip(2));
                                 await ProtectedSign(message);
                             }
                             else
                             {
                                 Console.WriteLine("Please provide a message for Protected Sign.");
+                            }
+                        }
+                        else if (subCommand == "mashify")
+                        {
+                            if (args.Length > 2)
+                            {
+                                string message = string.Join(" ", args.Skip(2));
+                                await ProtectedMashify(message);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Please provide a string to Mashify.");
                             }
                         }
                         else
@@ -183,10 +196,6 @@ class Program
                     {
                         Console.WriteLine("Incomplete protected command.");
                     }
-                    break;
-
-                default:
-                    Console.WriteLine("Invalid command.");
                     break;
             }
         }
@@ -499,6 +508,103 @@ class Program
             bytes[i] = Convert.ToByte(hexValues[i], 16);
         }
         return bytes;
+    }
+    #endregion
+
+    #region Task 14
+    private static async Task ProtectedMashify(string message)
+    {
+        if (string.IsNullOrEmpty(storedApiKey))
+        {
+            Console.WriteLine("You need to do a User Post or User Set first");
+            return;
+        }
+        if (string.IsNullOrEmpty(storedPublicKey))
+        {
+            Console.WriteLine("Client doesn't yet have the public key");
+            return;
+        }
+        Console.WriteLine("...please wait...");
+
+        var (aesKey, aesIV) = GenerateAesKeyAndIV();
+        byte[] encryptedMessage = EncryptWithAes(message, aesKey, aesIV);
+        byte[] encryptedKey = EncryptWithRsa(aesKey, storedPublicKey);
+        byte[] encryptedIV = EncryptWithRsa(aesIV, storedPublicKey);
+        byte[] encryptedString = encryptedMessage;
+
+        var payload = new
+        {
+            encryptedString = BitConverter.ToString(encryptedString),
+            encryptedSymKey = BitConverter.ToString(encryptedKey),
+            encryptedIV = BitConverter.ToString(encryptedIV)
+        };
+
+        var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
+        var request = new HttpRequestMessage(HttpMethod.Post, $"{BaseUrl}api/protected/mashify");
+        request.Headers.Add("ApiKey", storedApiKey);
+        request.Content = content;
+
+        try
+        {
+            HttpResponseMessage response = await client.SendAsync(request);
+            string responseHex = await response.Content.ReadAsStringAsync();
+            if (response.IsSuccessStatusCode)
+            {
+                byte[] encryptedResult = HexStringToByteArray(responseHex);
+                string result = DecryptWithAes(encryptedResult, aesKey, aesIV);
+                Console.WriteLine(result);
+            }
+            else Console.WriteLine("Bad Request");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("An error occurred during Mashify: " + ex.Message);
+        }
+    }
+
+    private static (byte[] key, byte[] iv) GenerateAesKeyAndIV()
+    {
+        using Aes aes = Aes.Create();
+        aes.KeySize = 256;
+        aes.GenerateKey();
+        aes.GenerateIV();
+        return (aes.Key, aes.IV);
+    }
+
+    private static byte[] EncryptWithAes(string plaintext, byte[] key, byte[] iv)
+    {
+        using Aes aes = Aes.Create();
+        aes.Key = key;
+        aes.IV = iv;
+        aes.Mode = CipherMode.CBC;
+        aes.Padding = PaddingMode.PKCS7;
+
+        using var ms = new MemoryStream();
+        using (var cs = new CryptoStream(ms, aes.CreateEncryptor(), CryptoStreamMode.Write))
+        using (var sw = new StreamWriter(cs)) sw.Write(plaintext);
+
+        return ms.ToArray();
+    }
+
+    private static string DecryptWithAes(byte[] ciphertext, byte[] key, byte[] iv)
+    {
+        using Aes aes = Aes.Create();
+        aes.Key = key;
+        aes.IV = iv;
+        aes.Mode = CipherMode.CBC;
+        aes.Padding = PaddingMode.PKCS7;
+
+        using var ms = new MemoryStream(ciphertext);
+        using var cs = new CryptoStream(ms, aes.CreateDecryptor(), CryptoStreamMode.Read);
+        using var sr = new StreamReader(cs);
+        return sr.ReadToEnd();
+    }
+
+    private static byte[] EncryptWithRsa(byte[] data, string publicKeyXml)
+    {
+        using var rsa = new RSACryptoServiceProvider();
+        rsa.FromXmlString(publicKeyXml);
+        return rsa.Encrypt(data, RSAEncryptionPadding.OaepSHA1);
     }
     #endregion
 

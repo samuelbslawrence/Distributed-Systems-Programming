@@ -1,8 +1,44 @@
 [
   {
     "ContainingType": "DistSysAcwServer.Controllers.ProtectedController",
-    "Method": "ComputeSHA1",
-    "RelativePath": "api/Protected/ComputeSHA1/SHA1",
+    "Method": "GetPublicKey",
+    "RelativePath": "api/protected/GetPublicKey",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DistSysAcwServer.Controllers.ProtectedController",
+    "Method": "Hello",
+    "RelativePath": "api/protected/hello",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DistSysAcwServer.Controllers.ProtectedController",
+    "Method": "Mashify",
+    "RelativePath": "api/protected/Mashify",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DistSysAcwServer.Controllers.ProtectedController\u002BMashifyRequest",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DistSysAcwServer.Controllers.ProtectedController",
+    "Method": "SHA1Hash",
+    "RelativePath": "api/protected/SHA1",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -18,7 +54,7 @@
   {
     "ContainingType": "DistSysAcwServer.Controllers.ProtectedController",
     "Method": "ComputeSHA256",
-    "RelativePath": "api/Protected/ComputeSHA256/SHA256",
+    "RelativePath": "api/protected/SHA256",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -33,44 +69,8 @@
   },
   {
     "ContainingType": "DistSysAcwServer.Controllers.ProtectedController",
-    "Method": "GetPublicKey",
-    "RelativePath": "api/Protected/GetPublicKey/GetPublicKey",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DistSysAcwServer.Controllers.ProtectedController",
-    "Method": "Hello",
-    "RelativePath": "api/Protected/Hello",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DistSysAcwServer.Controllers.ProtectedController",
-    "Method": "Mashify",
-    "RelativePath": "api/Protected/Mashify/Mashify",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "DistSysAcwServer.Controllers.ProtectedController\u002BMashifyRequest",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "DistSysAcwServer.Controllers.ProtectedController",
     "Method": "Sign",
-    "RelativePath": "api/Protected/Sign/Sign",
+    "RelativePath": "api/protected/Sign",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -112,7 +112,7 @@
   {
     "ContainingType": "DistSysAcwServer.Controllers.UserController",
     "Method": "ChangeRole",
-    "RelativePath": "api/User/ChangeRole/api/user/changerole",
+    "RelativePath": "api/User/changerole",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -128,7 +128,7 @@
   {
     "ContainingType": "DistSysAcwServer.Controllers.UserController",
     "Method": "CheckUserExists",
-    "RelativePath": "api/User/CheckUserExists/api/user/new",
+    "RelativePath": "api/User/new",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -144,7 +144,7 @@
   {
     "ContainingType": "DistSysAcwServer.Controllers.UserController",
     "Method": "CreateUser",
-    "RelativePath": "api/User/CreateUser/api/user/new",
+    "RelativePath": "api/User/new",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -160,7 +160,7 @@
   {
     "ContainingType": "DistSysAcwServer.Controllers.UserController",
     "Method": "RemoveUser",
-    "RelativePath": "api/User/RemoveUser/api/user/removeuser",
+    "RelativePath": "api/User/removeuser",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,

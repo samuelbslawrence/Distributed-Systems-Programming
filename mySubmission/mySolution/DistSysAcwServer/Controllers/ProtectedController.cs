@@ -17,7 +17,7 @@ namespace DistSysAcwServer.Controllers
     }
 
     #region Task 9 & 13
-    [Route("api/[controller]/[action]")]
+    [Route("api/protected")]
     [ApiController]
     [Authorize(Roles = "User,Admin")]
     public partial class ProtectedController : ControllerBase
@@ -31,10 +31,9 @@ namespace DistSysAcwServer.Controllers
         }
 
         // GET: api/Protected/Hello
-        [HttpGet]
+        [HttpGet("hello")]
         public async Task<IActionResult> Hello()
         {
-            // Task 13: Log the request for Hello endpoint
             if (Request.Headers.TryGetValue("ApiKey", out var apiKeyValues))
             {
                 string apiKey = apiKeyValues.First();
@@ -49,11 +48,10 @@ namespace DistSysAcwServer.Controllers
             return Ok($"Hello {userName}");
         }
 
-        // GET: api/Protected/SHA1?message=hello
+        // GET: api/Protected/SHA1?message=Hello
         [HttpGet("SHA1")]
-        public async Task<IActionResult> ComputeSHA1([FromQuery] string message)
+        public async Task<IActionResult> SHA1Hash([FromQuery] string message)
         {
-            // Task 13: Log the request for SHA1 endpoint
             if (Request.Headers.TryGetValue("ApiKey", out var apiKeyValues))
             {
                 string apiKey = apiKeyValues.First();
@@ -65,13 +63,13 @@ namespace DistSysAcwServer.Controllers
                 return BadRequest("Bad Request");
             }
 
-            using (var sha1 = SHA1.Create())
+            using (var sha1 = System.Security.Cryptography.SHA1.Create())
             {
                 byte[] hashBytes = sha1.ComputeHash(Encoding.UTF8.GetBytes(message));
                 StringBuilder sb = new StringBuilder(hashBytes.Length * 2);
                 foreach (var b in hashBytes)
                 {
-                    sb.Append(b.ToString("X2")); // uppercase hex
+                    sb.Append(b.ToString("X2"));
                 }
                 return Ok(sb.ToString());
             }
@@ -172,9 +170,9 @@ namespace DistSysAcwServer.Controllers
             public string EncryptedIV { get; set; }
         }
 
-        // GET: api/Protected/Mashify
+        // POST: api/Protected/Mashify
         // This endpoint requires Admin privileges.
-        [HttpGet("Mashify")]
+        [HttpPost("Mashify")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Mashify([FromBody] MashifyRequest request)
         {
@@ -185,10 +183,16 @@ namespace DistSysAcwServer.Controllers
                 await _userRepository.AddLogAsync(apiKey, "User requested /Protected/Mashify");
             }
 
+            if (string.IsNullOrWhiteSpace(request.EncryptedString) ||
+                string.IsNullOrWhiteSpace(request.EncryptedSymKey) ||
+                string.IsNullOrWhiteSpace(request.EncryptedIV))
+            {
+                return BadRequest("Bad Request");
+            }
+
             try
             {
                 // Use the static RSA provider for decryption (private key)
-                // Convert hex strings with dashes to byte arrays
                 byte[] encryptedMessageBytes = HexStringToByteArray(request.EncryptedString);
                 byte[] encryptedSymKeyBytes = HexStringToByteArray(request.EncryptedSymKey);
                 byte[] encryptedIVBytes = HexStringToByteArray(request.EncryptedIV);
