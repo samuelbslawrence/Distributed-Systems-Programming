@@ -27,13 +27,16 @@ namespace DistSysAcwServer.Controllers
         [HttpGet("new")]
         public async Task<IActionResult> CheckUserExists([FromQuery] string? username)
         {
+            // Validate that 'username' parameter is not null or whitespace
             if (string.IsNullOrWhiteSpace(username))
             {
                 return Ok("False - User Does Not Exist! Did you mean to do a POST to create a new user?");
             }
 
+            // Check database for matching username
             bool userExists = await DbContext.Users.AnyAsync(u => u.UserName == username);
 
+            // Return result: true if exists, false otherwise
             if (userExists)
             {
                 return Ok("True - User Does Exist! Did you mean to do a POST to create a new user?");
@@ -47,20 +50,24 @@ namespace DistSysAcwServer.Controllers
         [HttpPost("new")]
         public async Task<IActionResult> CreateUser([FromBody] string? username)
         {
+            // Ensure request body contains a valid username
             if (string.IsNullOrWhiteSpace(username))
             {
                 return BadRequest("Oops. Make sure your body contains a string with your username and your Content-Type is Content-Type:application/json");
             }
 
+            // Prevent duplicate usernames
             bool userExists = await DbContext.Users.AnyAsync(u => u.UserName == username);
             if (userExists)
             {
                 return StatusCode(403, "Oops. This username is already in use. Please try again with a new username.");
             }
 
+            // Assign 'Admin' role to the very first user, otherwise 'User'
             bool isFirstUser = !await DbContext.Users.AnyAsync();
             string role = isFirstUser ? "Admin" : "User";
 
+            // Instantiate new User with a unique API key
             var newUser = new User
             {
                 ApiKey = Guid.NewGuid().ToString(),
@@ -68,11 +75,14 @@ namespace DistSysAcwServer.Controllers
                 Role = role
             };
 
+            // Add and persist the new user
             DbContext.Users.Add(newUser);
             await DbContext.SaveChangesAsync();
 
+            // Respond with the new API key
             return Ok(newUser.ApiKey);
         }
+
         #endregion
 
         #region Task 7 & 13

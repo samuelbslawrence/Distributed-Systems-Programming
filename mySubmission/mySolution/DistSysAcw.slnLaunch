@@ -1,0 +1,16 @@
+[
+  {
+    "Name": "Client&Server",
+    "Projects": [
+      {
+        "Path": "DistSysAcwServer\\DistSysAcwServer.csproj",
+        "Action": "Start",
+        "DebugTarget": "IIS Express"
+      },
+      {
+        "Path": "DistSysAcwClient\\DistSysAcwClient.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

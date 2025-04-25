@@ -11,59 +11,61 @@ namespace DistSysAcwServer.Controllers
 {
     public partial class ProtectedController : ControllerBase
     {
-        // Static RSA provider to hold the key pair across all requests.
-        // This instance is generated once and used for signing and decryption.
+        // Static RSA provider for signing and decryption across all requests
         private static RSACryptoServiceProvider _rsaProvider = new RSACryptoServiceProvider();
     }
 
     #region Task 9 & 13
     [Route("api/protected")]
     [ApiController]
-    [Authorize(Roles = "User,Admin")]
+    [Authorize(Roles = "User,Admin")] // Only authenticated users with 'User' or 'Admin' roles
     public partial class ProtectedController : ControllerBase
     {
         private readonly UserRepository _userRepository;
 
-        // Inject UserRepository via constructor
+        // Constructor injection of UserRepository for logging
         public ProtectedController(UserRepository userRepository)
         {
             _userRepository = userRepository;
         }
 
-        // GET: api/Protected/Hello
         [HttpGet("hello")]
         public async Task<IActionResult> Hello()
         {
+            // Log the request if ApiKey header is present
             if (Request.Headers.TryGetValue("ApiKey", out var apiKeyValues))
             {
                 string apiKey = apiKeyValues.First();
                 await _userRepository.AddLogAsync(apiKey, "User requested /Protected/Hello");
             }
 
+            // Get the logged-in user's name and return greeting
             var userName = User.Identity?.Name;
             if (string.IsNullOrEmpty(userName))
             {
-                return BadRequest("Bad Request");
+                return BadRequest("Bad Request"); // Should not happen if authenticated
             }
             return Ok($"Hello {userName}");
         }
 
-        // GET: api/Protected/SHA1?message=Hello
         [HttpGet("SHA1")]
         public async Task<IActionResult> SHA1Hash([FromQuery] string message)
         {
+            // Log the request for SHA1 endpoint
             if (Request.Headers.TryGetValue("ApiKey", out var apiKeyValues))
             {
                 string apiKey = apiKeyValues.First();
                 await _userRepository.AddLogAsync(apiKey, "User requested /Protected/SHA1");
             }
 
+            // Validate the input message
             if (string.IsNullOrWhiteSpace(message))
             {
                 return BadRequest("Bad Request");
             }
 
-            using (var sha1 = System.Security.Cryptography.SHA1.Create())
+            // Compute SHA1 hash and return uppercase hex string
+            using (var sha1 = SHA1.Create())
             {
                 byte[] hashBytes = sha1.ComputeHash(Encoding.UTF8.GetBytes(message));
                 StringBuilder sb = new StringBuilder(hashBytes.Length * 2);
@@ -75,22 +77,23 @@ namespace DistSysAcwServer.Controllers
             }
         }
 
-        // GET: api/Protected/SHA256?message=hello
         [HttpGet("SHA256")]
         public async Task<IActionResult> ComputeSHA256([FromQuery] string message)
         {
-            // Task 13: Log the request for SHA256 endpoint
+            // Log the request for SHA256 endpoint
             if (Request.Headers.TryGetValue("ApiKey", out var apiKeyValues))
             {
                 string apiKey = apiKeyValues.First();
                 await _userRepository.AddLogAsync(apiKey, "User requested /Protected/SHA256");
             }
 
+            // Validate the input message
             if (string.IsNullOrWhiteSpace(message))
             {
                 return BadRequest("Bad Request");
             }
 
+            // Compute SHA256 hash and return uppercase hex string
             using (var sha256 = SHA256.Create())
             {
                 byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(message));
@@ -108,17 +111,17 @@ namespace DistSysAcwServer.Controllers
     #region Task 11
     public partial class ProtectedController : ControllerBase
     {
-        // GET: api/Protected/GetPublicKey
         [HttpGet("GetPublicKey")]
         public async Task<IActionResult> GetPublicKey()
         {
-            // Log the request for GetPublicKey endpoint
+            // Log the request if ApiKey header is present
             if (Request.Headers.TryGetValue("ApiKey", out var apiKeyValues))
             {
                 string apiKey = apiKeyValues.First();
                 await _userRepository.AddLogAsync(apiKey, "User requested /Protected/GetPublicKey");
             }
-            // Return the public key portion (XML string) of the RSA key pair.
+
+            // Return the public key XML without private parameters
             string publicKeyXml = _rsaProvider.ToXmlString(false);
             return Ok(publicKeyXml);
         }
@@ -128,26 +131,29 @@ namespace DistSysAcwServer.Controllers
     #region Task 12
     public partial class ProtectedController : ControllerBase
     {
-        // GET: api/Protected/Sign?message=Hello
         [HttpGet("Sign")]
         public async Task<IActionResult> Sign([FromQuery] string message)
         {
+            // Validate the input message
             if (string.IsNullOrWhiteSpace(message))
             {
                 return BadRequest("Bad Request");
             }
+
             // Log the request for Sign endpoint
             if (Request.Headers.TryGetValue("ApiKey", out var apiKeyValues))
             {
                 string apiKey = apiKeyValues.First();
                 await _userRepository.AddLogAsync(apiKey, "User requested /Protected/Sign");
             }
+
             try
             {
+                // Sign the message bytes using SHA1
                 byte[] messageBytes = Encoding.ASCII.GetBytes(message);
-                // Sign the data using RSA with SHA1
                 byte[] signatureBytes = _rsaProvider.SignData(messageBytes, CryptoConfig.MapNameToOID("SHA1"));
-                // Convert to hex string with dashes as delimiters
+
+                // Convert signature bytes to dash-separated hex string
                 string signatureHex = string.Join("-", signatureBytes.Select(b => b.ToString("X2")));
                 return Ok(signatureHex);
             }
@@ -162,7 +168,6 @@ namespace DistSysAcwServer.Controllers
     #region Task 14
     public partial class ProtectedController : ControllerBase
     {
-        // Model representing the expected JSON object in the request body for Mashify endpoint
         public class MashifyRequest
         {
             public string EncryptedString { get; set; }
@@ -170,19 +175,17 @@ namespace DistSysAcwServer.Controllers
             public string EncryptedIV { get; set; }
         }
 
-        // POST: api/Protected/Mashify
-        // This endpoint requires Admin privileges.
-        [HttpPost("Mashify")]
-        [Authorize(Roles = "Admin")]
+        [HttpGet("Mashify")]
         public async Task<IActionResult> Mashify([FromBody] MashifyRequest request)
         {
-            // Log the request for Mashify endpoint (do not log sensitive encrypted data)
+            // Log the request (do not log encrypted data)
             if (Request.Headers.TryGetValue("ApiKey", out var apiKeyValues))
             {
                 string apiKey = apiKeyValues.First();
                 await _userRepository.AddLogAsync(apiKey, "User requested /Protected/Mashify");
             }
 
+            // Validate encrypted inputs
             if (string.IsNullOrWhiteSpace(request.EncryptedString) ||
                 string.IsNullOrWhiteSpace(request.EncryptedSymKey) ||
                 string.IsNullOrWhiteSpace(request.EncryptedIV))
@@ -192,23 +195,21 @@ namespace DistSysAcwServer.Controllers
 
             try
             {
-                // Use the static RSA provider for decryption (private key)
+                // Convert dash-separated hex strings to byte arrays
                 byte[] encryptedMessageBytes = HexStringToByteArray(request.EncryptedString);
                 byte[] encryptedSymKeyBytes = HexStringToByteArray(request.EncryptedSymKey);
                 byte[] encryptedIVBytes = HexStringToByteArray(request.EncryptedIV);
 
-                // Decrypt using RSA with OaepSHA1 padding
+                // Decrypt with RSA private key using OAEP SHA1 padding
                 byte[] decryptedMessageBytes = _rsaProvider.Decrypt(encryptedMessageBytes, RSAEncryptionPadding.OaepSHA1);
                 byte[] decryptedSymKeyBytes = _rsaProvider.Decrypt(encryptedSymKeyBytes, RSAEncryptionPadding.OaepSHA1);
                 byte[] decryptedIVBytes = _rsaProvider.Decrypt(encryptedIVBytes, RSAEncryptionPadding.OaepSHA1);
 
-                // Convert decrypted message to string
+                // Convert decrypted bytes to string and mashify
                 string decryptedMessage = Encoding.UTF8.GetString(decryptedMessageBytes);
-
-                // Mashify the string
                 string mashified = Mashify(decryptedMessage);
 
-                // Encrypt the mashified string using AES with the decrypted symmetric key and IV
+                // Encrypt mashified text with AES using the symmetric key and IV
                 byte[] mashifiedBytes = Encoding.UTF8.GetBytes(mashified);
                 byte[] encryptedResultBytes;
                 using (var aes = Aes.Create())
@@ -223,34 +224,31 @@ namespace DistSysAcwServer.Controllers
                     }
                 }
 
-                // Convert the encrypted result to hex string with dashes as delimiters
+                // Return encrypted result as dash-separated hex string
                 string resultHex = ByteArrayToHexString(encryptedResultBytes);
                 return Ok(resultHex);
             }
             catch
             {
-                // Return "Bad Request" with status code 400 if an error occurs
                 return BadRequest("Bad Request");
             }
         }
 
-        // Helper method to convert a hex string with dashes to a byte array
         private byte[] HexStringToByteArray(string hex)
         {
+            // Convert dash-separated hex string into byte array
             return hex.Split('-').Select(s => Convert.ToByte(s, 16)).ToArray();
         }
 
-        // Helper method to convert a byte array to a hex string with dashes as delimiters
         private string ByteArrayToHexString(byte[] bytes)
         {
+            // Convert byte array to dash-separated hex string
             return string.Join("-", bytes.Select(b => b.ToString("X2")));
         }
 
-        // Helper method to mashify a string:
-        // 1. Replace all vowels with uppercase 'X'
-        // 2. Reverse the string
         private string Mashify(string input)
         {
+            // Replace vowels with 'X' and reverse the character array
             char[] chars = input.Select(c => "aeiouAEIOU".Contains(c) ? 'X' : c).ToArray();
             Array.Reverse(chars);
             return new string(chars);

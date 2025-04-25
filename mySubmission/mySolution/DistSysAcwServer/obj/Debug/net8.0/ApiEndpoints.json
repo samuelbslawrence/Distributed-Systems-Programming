@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "DistSysAcwServer.Controllers.OtherController",
+    "Method": "Clear",
+    "RelativePath": "api/Other/clear",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "DistSysAcwServer.Controllers.ProtectedController",
     "Method": "GetPublicKey",
     "RelativePath": "api/protected/GetPublicKey",
@@ -23,7 +33,7 @@
     "ContainingType": "DistSysAcwServer.Controllers.ProtectedController",
     "Method": "Mashify",
     "RelativePath": "api/protected/Mashify",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

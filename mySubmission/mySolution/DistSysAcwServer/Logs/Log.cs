@@ -8,11 +8,11 @@ namespace DistSysAcwServer.Models
     public class Log
     {
         [Key]
-        public int LogID { get; set; } // Primary key
+        public int LogID { get; set; }
 
-        public string LogString { get; set; } // Description of the log
+        public string LogString { get; set; }
 
-        public DateTime LogDateTime { get; set; } // Timestamp of the log
+        public DateTime LogDateTime { get; set; }
 
         // Constructor that sets the log message and current time
         public Log(string logMessage)

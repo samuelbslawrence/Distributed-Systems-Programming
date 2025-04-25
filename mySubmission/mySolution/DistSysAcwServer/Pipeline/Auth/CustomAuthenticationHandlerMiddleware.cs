@@ -45,10 +45,6 @@ namespace DistSysAcwServer.Auth
         /// 
 
         #region Task 5
-        // TODO:  Find if a header ‘ApiKey’ exists, and if it does, check the database to determine if the given API Key is valid
-        //        Then create the correct Claims, add these to a ClaimsIdentity, create a ClaimsPrincipal from the identity 
-        //        Then use the Principal to generate a new AuthenticationTicket to return a Success AuthenticateResult
-
         protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
         {
             // Check if ApiKey header exists

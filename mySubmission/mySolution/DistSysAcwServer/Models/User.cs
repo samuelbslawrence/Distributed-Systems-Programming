@@ -7,24 +7,27 @@ using System.Linq;
 namespace DistSysAcwServer.Models
 {
     /// <summary>
-    /// User data class
+    /// Represents an application user with authentication key, role, and related logs
     /// </summary>
     public class User
     {
         #region Task 2
-        // TODO: Create a User Class for use with Entity Framework
-        // Note that you can use the [key] attribute to set your ApiKey Guid as the primary key 
+        // Parameterless constructor required by EF Core
         public User() { }
 
+        // Primary key: unique API key (GUID stored as string)
         [Key]
         public string ApiKey { get; set; }
+
+        // The user's display or login name
         public string UserName { get; set; }
+
+        // Role for authorization (e.g., "Admin" or "User")
         public string Role { get; set; }
         #endregion
 
         #region Task 13
-        // TODO: You may find it useful to add code here for Logging
-        // Navigation property for the user's logs
+        // Collection of Log entries related to this user
         public virtual ICollection<Log> Logs { get; set; } = new List<Log>();
         #endregion
     }

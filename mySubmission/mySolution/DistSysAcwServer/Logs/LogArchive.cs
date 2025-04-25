@@ -8,13 +8,13 @@ namespace DistSysAcwServer.Models
     public class LogArchive
     {
         [Key]
-        public int LogID { get; set; } // Primary key
+        public int LogID { get; set; }
 
-        public string LogString { get; set; } // Log description
+        public string LogString { get; set; }
 
-        public DateTime LogDateTime { get; set; } // Timestamp of the log
+        public DateTime LogDateTime { get; set; }
 
-        public string UserApiKey { get; set; } // API key of the user to whom this log belonged
+        public string UserApiKey { get; set; }
 
         // Constructor that sets the log message, associated user API key and current time
         public LogArchive(string logMessage, string userApiKey)

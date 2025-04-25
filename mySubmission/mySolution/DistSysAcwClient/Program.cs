@@ -11,9 +11,9 @@ class Program
 {
     #region Task 10
     // Test Server
-    private const string BaseUrl = "http://150.237.94.9/5488600/";
+    //private const string BaseUrl = "http://150.237.94.9/5488600/";
     // IIS
-    //private const string BaseUrl = "https://localhost:44394/";
+    private const string BaseUrl = "https://localhost:44394/";
     // Kestrel
     //private const string BaseUrl = "https://localhost:5001/";
 
@@ -21,7 +21,7 @@ class Program
 
     private static string storedUserName = "";
     private static string storedApiKey = "";
-    private static string storedPublicKey = ""; // Stores the server's public RSA key
+    private static string storedPublicKey = "";
 
     static async Task Main()
     {
@@ -60,6 +60,7 @@ class Program
             switch (command)
             {
                 case "talkback":
+                    // Process talkback
                     if (args.Length > 1)
                     {
                         string subCommand = args[1].ToLower();
@@ -90,6 +91,7 @@ class Program
                     break;
 
                 case "user":
+                    // Process user
                     if (args.Length > 1)
                     {
                         string subCommand = args[1].ToLower();
@@ -137,6 +139,7 @@ class Program
                     break;
 
                 case "protected":
+                    // Process protected
                     if (args.Length > 1)
                     {
                         string subCommand = args[1].ToLower();
@@ -159,9 +162,9 @@ class Program
                             else
                                 Console.WriteLine("Please provide a message for Protected SHA256.");
                         }
-                        else if (subCommand == "getpublickey")
+                        else if (subCommand == "get" && args.Length > 2 && args[2].ToLower() == "publickey")
                         {
-                            await ProtectedGetPublicKey();
+                            await ProtectedPublicKey();
                         }
                         else if (subCommand == "sign")
                         {
@@ -201,10 +204,12 @@ class Program
         }
         catch (Exception ex)
         {
+            // Catch and display any unexpected errors
             Console.WriteLine("An error occurred while processing the command: " + ex.Message);
         }
     }
 
+    // Performs a TalkBack hello request
     private static async Task TalkBackHello()
     {
         Console.WriteLine("...please wait...");
@@ -220,6 +225,7 @@ class Program
         }
     }
 
+    // Performs a TalkBack sort request with provided integers
     private static async Task TalkBackSort(string[] numbers)
     {
         Console.WriteLine("...please wait...");
@@ -235,6 +241,7 @@ class Program
         }
     }
 
+    // Checks if a user exists
     private static async Task UserGet(string username)
     {
         Console.WriteLine("...please wait...");
@@ -249,6 +256,7 @@ class Program
         }
     }
 
+    // Creates a new user and stores the returned API key
     private static async Task UserPost(string username)
     {
         Console.WriteLine("...please wait...");
@@ -275,6 +283,7 @@ class Program
         }
     }
 
+    // Stores user credentials for future requests
     private static void UserSet(string username, string apiKey)
     {
         storedUserName = username;
@@ -282,6 +291,7 @@ class Program
         Console.WriteLine("Stored");
     }
 
+    // Deletes the current user
     private static async Task UserDelete()
     {
         if (string.IsNullOrEmpty(storedUserName) || string.IsNullOrEmpty(storedApiKey))
@@ -311,6 +321,7 @@ class Program
         }
     }
 
+    // Changes the role of a specified user
     private static async Task UserRole(string username, string role)
     {
         if (string.IsNullOrEmpty(storedApiKey))
@@ -338,6 +349,7 @@ class Program
         }
     }
 
+    // Requests a protected hello endpoint
     private static async Task ProtectedHello()
     {
         if (string.IsNullOrEmpty(storedApiKey))
@@ -359,6 +371,7 @@ class Program
         }
     }
 
+    // Computes SHA1 hash of a message via protected endpoint
     private static async Task ProtectedSha1(string message)
     {
         if (string.IsNullOrEmpty(storedApiKey))
@@ -381,6 +394,7 @@ class Program
         }
     }
 
+    // Computes SHA256 hash of a message via protected endpoint
     private static async Task ProtectedSha256(string message)
     {
         if (string.IsNullOrEmpty(storedApiKey))
@@ -406,7 +420,7 @@ class Program
 
     #region Task 11
     // Getting and storing the server's public RSA key
-    private static async Task ProtectedGetPublicKey()
+    private static async Task ProtectedPublicKey()
     {
         if (string.IsNullOrEmpty(storedApiKey))
         {
@@ -512,6 +526,7 @@ class Program
     #endregion
 
     #region Task 14
+    // Encrypts and sends a message to be mashified by the server, then decrypts and displays the result
     private static async Task ProtectedMashify(string message)
     {
         if (string.IsNullOrEmpty(storedApiKey))
@@ -527,20 +542,24 @@ class Program
         Console.WriteLine("...please wait...");
 
         var (aesKey, aesIV) = GenerateAesKeyAndIV();
-        byte[] encryptedMessage = EncryptWithAes(message, aesKey, aesIV);
-        byte[] encryptedKey = EncryptWithRsa(aesKey, storedPublicKey);
+        byte[] encryptedMessage = EncryptWithRsa(Encoding.ASCII.GetBytes(message), storedPublicKey);
+        byte[] encryptedSymkey = EncryptWithRsa(aesKey, storedPublicKey);
         byte[] encryptedIV = EncryptWithRsa(aesIV, storedPublicKey);
         byte[] encryptedString = encryptedMessage;
 
         var payload = new
         {
-            encryptedString = BitConverter.ToString(encryptedString),
-            encryptedSymKey = BitConverter.ToString(encryptedKey),
-            encryptedIV = BitConverter.ToString(encryptedIV)
+            EncryptedString = BitConverter.ToString(encryptedString),
+            EncryptedSymKey = BitConverter.ToString(encryptedSymkey),
+            EncryptedIV = BitConverter.ToString(encryptedIV)
         };
 
         var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
-        var request = new HttpRequestMessage(HttpMethod.Post, $"{BaseUrl}api/protected/mashify");
+        var request = new HttpRequestMessage(HttpMethod.Get, $"{BaseUrl}api/protected/mashify");
+
+        // Get Encrypted
+        string temp = System.Text.Json.JsonSerializer.Serialize(payload);
+
         request.Headers.Add("ApiKey", storedApiKey);
         request.Content = content;
 
@@ -562,6 +581,7 @@ class Program
         }
     }
 
+    // Generates a new AES key and IV for symmetric encryption
     private static (byte[] key, byte[] iv) GenerateAesKeyAndIV()
     {
         using Aes aes = Aes.Create();
@@ -571,21 +591,7 @@ class Program
         return (aes.Key, aes.IV);
     }
 
-    private static byte[] EncryptWithAes(string plaintext, byte[] key, byte[] iv)
-    {
-        using Aes aes = Aes.Create();
-        aes.Key = key;
-        aes.IV = iv;
-        aes.Mode = CipherMode.CBC;
-        aes.Padding = PaddingMode.PKCS7;
-
-        using var ms = new MemoryStream();
-        using (var cs = new CryptoStream(ms, aes.CreateEncryptor(), CryptoStreamMode.Write))
-        using (var sw = new StreamWriter(cs)) sw.Write(plaintext);
-
-        return ms.ToArray();
-    }
-
+    // Decrypts ciphertext using AES-CBC with PKCS7 padding
     private static string DecryptWithAes(byte[] ciphertext, byte[] key, byte[] iv)
     {
         using Aes aes = Aes.Create();
@@ -600,6 +606,7 @@ class Program
         return sr.ReadToEnd();
     }
 
+    // Encrypts data using RSA OAEP-SHA1 with the given public key
     private static byte[] EncryptWithRsa(byte[] data, string publicKeyXml)
     {
         using var rsa = new RSACryptoServiceProvider();
